@@ -11,7 +11,7 @@ I use this config in all my projects. No need to copy/paste anymore 😄
 ## Install
 
 ```sh
-npm i -D @decampsrenan/prettier-config
+npm i -D @decampsrenan/config
 ```
 
 ## Usage
@@ -22,7 +22,9 @@ npm i -D @decampsrenan/prettier-config
 // package.json
 {
   "name": "...",
-  "prettier": "@decampsrenan/prettier-config"
+  "prettier": "@decampsrenan/config/prettier-default"
+  // Use "prettier-astro" to format astro files
+  // "prettier": "@decampsrenan/config/prettier-astro"
 }
 ```
 
@@ -30,7 +32,7 @@ Or if you need more control on the settings:
 
 ```js
 // .prettierrc.mjs
-import config from "@decampsrenan/prettier-config"
+import config from "@decampsrenan/config/prettier-default"
 
 export default {
   ...config
