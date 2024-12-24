@@ -1,6 +1,6 @@
 {
   "name": "@decampsrenan/config",
-  "version": "4.0.0",
+  "version": "0.0.0",
   "description": "Personal config files",
   "exports": {
     "./prettier-default": "./prettier-default.mjs",
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "true",
-    "release": "np --no-publish",
+    "release": "np",
     "dev": "chokidar \"**/*.{mjs,json}\" -c \"yalc publish --push\""
   },
   "type": "module",
