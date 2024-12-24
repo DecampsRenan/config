@@ -18,7 +18,7 @@ npm i -D @decampsrenan/config
 
 ### Prettier
 
-```json
+```json5
 // package.json
 {
   "name": "...",
