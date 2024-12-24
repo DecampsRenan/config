@@ -5,7 +5,7 @@ I use this config in all my projects. No need to copy/paste anymore 😄
 ## Supported tools
 
 - [x] Prettier
-- [ ] ESLint
+- [x] ESLint
 - [ ] Typescript
 
 ## Install
@@ -45,4 +45,14 @@ Then run the following commands to check or update files if needed:
 ```sh
 npx prettier -c ./ # Check if there is some files to update
 npx prettier -w ./ # Update files
+```
+
+### TSConfig
+
+```json5
+// tsconfig.json
+{
+  "extends": "@decampsrenan/config/tsconfig"
+  // Override with your custom needs here
+}
 ```

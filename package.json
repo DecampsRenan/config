@@ -4,7 +4,8 @@
   "description": "Personal config files",
   "exports": {
     "./prettier-default": "./prettier-default.mjs",
-    "./prettier-astro": "./prettier-astro.mjs"
+    "./prettier-astro": "./prettier-astro.mjs",
+    "./tsconfig": "./tsconfig.json"
   },
   "scripts": {
     "test": "true",
