@@ -16,6 +16,11 @@ on:
           - preminor
           - premajor
           - prerelease
+
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
 jobs:
   release:
     name: Release on npm
@@ -42,4 +47,5 @@ jobs:
       - run: git config --global user.name "Github Actions"
       - run: git config --global user.email "actions@users.noreply.github.com"
       - run: pnpm i
-      - run: pnpm release --branch ${{ github.ref_name }} ${{ inputs.version }}
+      - run: pnpm release --no-publish --branch ${{ github.ref_name }} ${{ inputs.version }}
+      - run: npm publish
