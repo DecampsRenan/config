@@ -17,7 +17,9 @@
     "prettier",
     "prettier-config",
     "config",
-    "style"
+    "style",
+    "typescript",
+    "shared"
   ],
   "author": {
     "name": "Renan Decamps",
@@ -25,13 +27,14 @@
     "url": "https://github.com/decampsrenan"
   },
   "license": "MIT",
+  "packageManager": "pnpm@10.17.1",
   "dependencies": {
-    "@trivago/prettier-plugin-sort-imports": "4.3.0"
+    "@trivago/prettier-plugin-sort-imports": "5.2.2"
   },
   "devDependencies": {
     "chokidar-cli": "3.0.0",
-    "np": "10.1.0",
-    "prettier": "3.1.1",
+    "np": "10.2.0",
+    "prettier": "3.6.2",
     "yalc": "1.0.0-pre.53"
   },
   "peerDependencies": {
