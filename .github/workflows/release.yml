@@ -1,5 +1,21 @@
 name: CI
-on: workflow_dispatch
+#on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        default: "patch"
+        description: Version used to publish the new package (and how to increment package version)
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+          - prepatch
+          - preminor
+          - premajor
+          - prerelease
 jobs:
   release:
     name: Release on npm
@@ -11,11 +27,19 @@ jobs:
           - 21
     steps:
       - uses: actions/checkout@v5
+      - name: Install Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ matrix.node-version}}
+          package-manager-cache: false
+      - name: Enable Corepack
+        run: corepack enable
       - uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version}}
           registry-url: https://registry.npmjs.org/
+          cache: "pnpm"
       - run: git config --global user.name "Github Actions"
       - run: git config --global user.email "actions@users.noreply.github.com"
       - run: pnpm i
-      - run: pnpm release
+      - run: pnpm release --branch ${{ github.ref_name }} ${{ inputs.version }}
