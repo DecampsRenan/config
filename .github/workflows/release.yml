@@ -4,6 +4,21 @@ on:
   push:
     branches:
       - feat/update-release-ci
+  workflow_dispatch:
+    inputs:
+      version:
+        default: "patch"
+        description: Version used to publish the new package (and how to increment package version)
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+          - prepatch
+          - preminor
+          - premajor
+          - prerelease
 jobs:
   release:
     name: Release on npm
@@ -30,4 +45,4 @@ jobs:
       - run: git config --global user.name "Github Actions"
       - run: git config --global user.email "actions@users.noreply.github.com"
       - run: pnpm i
-      - run: pnpm release --branch ${{ github.ref_name }}
+      - run: pnpm release --branch ${{ github.ref_name }} ${{ input.version }}
