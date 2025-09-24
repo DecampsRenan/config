@@ -5,8 +5,8 @@ I use this config in all my projects. No need to copy/paste anymore 😄
 ## Supported tools
 
 - [x] Prettier
-- [x] ESLint
-- [ ] Typescript
+- [ ] ESLint
+- [x] Typescript
 
 ## Install
 

@@ -1,0 +1,21 @@
+name: CI
+on: workflow_dispatch
+jobs:
+  release:
+    name: Release on npm
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version:
+          - 21
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ matrix.node-version}}
+          registry-url: https://registry.npmjs.org/
+      - run: git config --global user.name "Github Actions"
+      - run: git config --global user.email "actions@users.noreply.github.com"
+      - run: pnpm i
+      - run: pnpm release
