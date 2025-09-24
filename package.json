@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "true",
-    "release": "np --no-publish --preview",
+    "release": "np",
     "dev": "chokidar \"**/*.{mjs,json}\" -c \"yalc publish --push\""
   },
   "type": "module",
