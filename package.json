@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "true",
-    "release": "np",
+    "release": "np --no-publish --preview",
     "dev": "chokidar \"**/*.{mjs,json}\" -c \"yalc publish --push\""
   },
   "type": "module",
@@ -28,6 +28,9 @@
   },
   "license": "MIT",
   "packageManager": "pnpm@10.17.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@trivago/prettier-plugin-sort-imports": "5.2.2"
   },
