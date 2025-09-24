@@ -30,4 +30,4 @@ jobs:
       - run: git config --global user.name "Github Actions"
       - run: git config --global user.email "actions@users.noreply.github.com"
       - run: pnpm i
-      - run: pnpm release
+      - run: pnpm release --branch ${{ github.ref_name }}
