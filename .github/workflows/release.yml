@@ -1,5 +1,9 @@
 name: CI
-on: workflow_dispatch
+#on: workflow_dispatch
+on:
+  push:
+    branches:
+      - feat/update-release-ci
 jobs:
   release:
     name: Release on npm
