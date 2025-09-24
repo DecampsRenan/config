@@ -32,18 +32,13 @@ jobs:
           - 21
     steps:
       - uses: actions/checkout@v5
-      - name: Install Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: ${{ matrix.node-version}}
-          package-manager-cache: false
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0
       - uses: actions/setup-node@v5
         with:
-          node-version: ${{ matrix.node-version}}
-          registry-url: https://registry.npmjs.org/
-          cache: "pnpm"
+          node-version: 21
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
       - run: git config --global user.name "Github Actions"
       - run: git config --global user.email "actions@users.noreply.github.com"
       - run: pnpm i
