@@ -5,8 +5,29 @@
 		"clientKind": "git",
 		"useIgnoreFile": true
 	},
-	"organizeImports": {
-		"enabled": true
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": {
+					"level": "on",
+					"options": {
+						"groups": [
+							["react", "react-dom", "react-dom/**", "react-*", "react-*/**"],
+							":BLANK_LINE:",
+							["@plasmohq/*", "@plasmohq/**"],
+							":BLANK_LINE:",
+							":PACKAGE:",
+							":BLANK_LINE:",
+							":ALIAS:",
+							":BLANK_LINE:",
+							":PACKAGE_WITH_PROTOCOL:",
+							":BLANK_LINE:",
+							":PATH:"
+						]
+					}
+				}
+			}
+		}
 	},
 	"formatter": {
 		"enabled": true,
