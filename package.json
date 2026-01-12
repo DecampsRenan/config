@@ -5,7 +5,8 @@
   "exports": {
     "./prettier-default": "./prettier-default.mjs",
     "./prettier-astro": "./prettier-astro.mjs",
-    "./tsconfig": "./tsconfig.json"
+    "./tsconfig": "./tsconfig.json",
+    "./biome": "./biome.json"
   },
   "scripts": {
     "test": "true",
@@ -16,6 +17,11 @@
   "keywords": [
     "prettier",
     "prettier-config",
+    "biome",
+    "biome-config",
+    "eslint",
+    "linter",
+    "formatter",
     "config",
     "style",
     "typescript",

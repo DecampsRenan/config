@@ -5,7 +5,7 @@ I use this config in all my projects. No need to copy/paste anymore 😄
 ## Supported tools
 
 - [x] Prettier
-- [ ] ESLint
+- [x] Biome (replaces ESLint + Prettier)
 - [x] Typescript
 
 ## Install
@@ -45,6 +45,43 @@ Then run the following commands to check or update files if needed:
 ```sh
 npx prettier -c ./ # Check if there is some files to update
 npx prettier -w ./ # Update files
+```
+
+### Biome
+
+[Biome](https://biomejs.dev/) is a fast formatter and linter that can replace both Prettier and ESLint.
+
+```json5
+// biome.json
+{
+  "extends": ["@decampsrenan/config/biome"]
+  // Override with your custom needs here
+}
+```
+
+Or if you need more control on the settings:
+
+```json5
+// biome.json
+{
+  "extends": ["@decampsrenan/config/biome"],
+  "linter": {
+    "rules": {
+      "suspicious": {
+        "noConsoleLog": "off" // Example: disable console.log warnings
+      }
+    }
+  }
+}
+```
+
+Then run the following commands:
+
+```sh
+npx @biomejs/biome check ./        # Check formatting and linting
+npx @biomejs/biome check --write ./  # Fix issues automatically
+npx @biomejs/biome lint ./         # Lint only
+npx @biomejs/biome format ./       # Format only
 ```
 
 ### TSConfig
