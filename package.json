@@ -30,7 +30,6 @@
     "url": "https://github.com/decampsrenan"
   },
   "license": "MIT",
-  "packageManager": "pnpm@10.17.1",
   "publishConfig": {
     "access": "public"
   },
